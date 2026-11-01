@@ -9,27 +9,7 @@ function getHumanChoice() {
 }
 
 function playRound(human, computer) {
-  if (human === computer) {
-    return "draw";
-  } else {
-    if (human === "rock") {
-      if (computer === "scissors") {
-        return "win";
-      } else {
-        return "lose";
-      }
-    } else if (human === "paper") {
-      if (computer === "rock") {
-        return "win";
-      } else {
-        return "lose";
-      }
-    } else {
-      if (computer === "paper") {
-        return "win";
-      } else {
-        return "lose";
-      }
-    }
-  }
+  if (human === computer) return "draw";
+  const beats = { rock: "scissors", paper: "rock", scissors: "paper" };
+  return beats[human] === computer ? "win" : "lose";
 }
